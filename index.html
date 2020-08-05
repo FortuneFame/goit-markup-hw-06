@@ -438,7 +438,7 @@
           </address>
         </div>
         <div class="footer-social-links">
-          <b class="join">присоединяйтесь</b>
+          <h2 class="join">присоединяйтесь</h2>
           <ul class="social-list-link">
             <li class="social-links">
               <a
@@ -475,20 +475,62 @@
           </ul>
         </div>
         <div>
-          <b class="join">Подпишитесь на рассылку</b>
-          <!-- <div class="subcribe">
-            <form class="forma-submit" action="#">
+          <h2 class="join">Подпишитесь на рассылку</h2>
+          <form class="footer-form">
+            <div class="footer-form-input">
+              <input
+                type="email"
+                name="user-email"
+                id="user-email"
+                class="form-input"
+                placeholder="E-mail"
+              />
               <button type="submit" class="footer-button">
-                <b class="label">Подписаться</b>
+                <b class="name-btn">Подписаться</b>
                 <svg width="20" height="20" class="icon-submit">
                   <use href="./images/svg/sprite.svg#icon-submit"></use>
                 </svg>
-              </button> -->
-            </form>
-          </div>
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </footer>
+    <div class="backdrop">
+      <form class="modal-form">
+        <h2 class="modal-form-title">
+          Оставьте свои данные, мы вам перезвоним
+        </h2>
+        <div class="modal-form-input-wrapper">
+          <label for="user-name-form">Имя</label>
+          <input
+            type="text"
+            name="user-name"
+            id="user-name-form"
+            class="modal-form-input"
+          />
+        </div>
+        <div class="modal-form-input-wrapper">
+          <label for="user-tel-form">Телефон</label>
+          <input
+            type="tel"
+            name="user-tel"
+            id="user-tel-form"
+            class="modal-form-input"
+          />
+        </div>
+        <div class="modal-form-input-wrapper">
+          <label for="user-email-form">Почта</label>
+          <input
+            type="email"
+            name="user-email"
+            id="user-email-form"
+            class="modal-form-input"
+          />
+        </div>
+        <textarea name="" id="">Комментарий</textarea>
+      </form>
+    </div>
     <script src="./js/modal.js"></script>
   </body>
 </html>
