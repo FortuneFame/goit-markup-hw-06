@@ -493,6 +493,12 @@ header a {
   background: #2f303a;
 }
 
+.logo-site {
+  display: flex;
+  margin-right: 85px;
+  cursor: pointer;
+}
+
 .wrapper-footer {
   display: flex;
   align-items: baseline;
