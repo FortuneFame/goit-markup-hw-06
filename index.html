@@ -498,46 +498,80 @@
     </footer>
     <div class="backdrop">
       <form class="modal-form">
+        <button type="button" class="button-close">
+          <svg width="12" height="10.97" class="icon-form-button-close">
+            <use href="./images/svg/sprite.svg#icon-close-form"></use>
+          </svg>
+        </button>
         <h2 class="modal-form-title">
           Оставьте свои данные, мы вам перезвоним
         </h2>
         <div class="modal-form-input-wrapper">
-          <label for="user-name-form">Имя</label>
+          <label for="user-name-form" class="modal-form-label">Имя</label>
           <input
             type="text"
             name="user-name"
             id="user-name-form"
             class="modal-form-input"
           />
-          <svg width="12" height="10.97" class="icon-form">
+          <svg width="12" height="10.97" class="icon-form-user">
             <use href="./images/svg/sprite.svg#icon-user-form"></use>
           </svg>
         </div>
         <div class="modal-form-input-wrapper">
-          <label for="user-tel-form">Телефон</label>
+          <label for="user-tel-form" class="modal-form-label">Телефон</label>
           <input
             type="tel"
             name="user-tel"
             id="user-tel-form"
             class="modal-form-input"
           />
-          <svg width="13" height="13" class="icon-form">
+          <svg width="13" height="13" class="icon-form-phone">
             <use href="./images/svg/sprite.svg#icon-phone-form"></use>
           </svg>
         </div>
         <div class="modal-form-input-wrapper">
-          <label for="user-email-form">Почта</label>
+          <label for="user-email-form" class="modal-form-label">Почта</label>
           <input
             type="email"
             name="user-email"
             id="user-email-form"
             class="modal-form-input"
           />
-          <svg width="15" height="12" class="icon-form">
+          <svg width="15" height="12" class="icon-form-letter">
             <use href="./images/svg/sprite.svg#icon-letter-form"></use>
           </svg>
         </div>
-        <textarea name="" id="">Комментарий</textarea>
+        <div class="modal-form-texterea">
+          <label for="textarea" class="modal-form-label-textarea"
+            >Комментарий</label
+          >
+          <textarea
+            name="modal-textarea"
+            id="textarea"
+            class="comment-modal-form"
+          ></textarea>
+        </div>
+        <div class="modal-form-option">
+          <label for="agreement-label">
+            <input
+              type="checkbox"
+              name="agreement"
+              id="agreement"
+              value="agreement"
+              class="agreement"
+            />
+            <span class="modal-form-checkbox-agreement"></span>
+            <span class="agreement-policy-form"
+              >Соглашаюсь с рассылкой и принимаю<a
+                href=""
+                class="agreement-policy link"
+                >Условия договора</a
+              >
+            </span>
+          </label>
+        </div>
+        <button type="submit" class="form-button">Отправить</button>
       </form>
     </div>
     <script src="./js/modal.js"></script>
