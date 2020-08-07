@@ -822,7 +822,7 @@ header a {
   transform: translateY(0);
 }
 
-/* Модальное окно */
+/* ======== Модальное окно =========== */
 
 .backdrop {
   position: fixed;
@@ -837,6 +837,12 @@ header a {
   height: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .modal-form {
@@ -871,6 +877,7 @@ header a {
   top: 8px;
   right: 8px;
 
+  outline: none;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -880,14 +887,39 @@ header a {
   cursor: pointer;
 }
 
+.button-close:hover,
+.button-close:focus {
+  fill: #2196f3;
+}
+
 .modal-form-title {
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 30px;
 
   font-weight: bold;
   font-size: 20px;
   line-height: 1.15;
   letter-spacing: 0.03em;
+}
+
+.modal-form-input-wrapper {
+  position: relative;
+  margin-bottom: 28px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-label {
+  position: absolute;
+
+  top: 50%;
+  left: 42px;
+  transform: translateY(-50%);
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.01em;
+  color: #757575;
 }
 
 .modal-form-input {
@@ -899,35 +931,32 @@ header a {
   padding-bottom: 11px;
   padding-left: 42px;
 
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  outline: none;
   cursor: pointer;
 }
 
-.modal-form-input:focus .modal-form-label {
-  top: 30px;
+.modal-form-input-wrapper:hover .modal-form-label,
+.modal-form-input-wrapper:hover .modal-form-label {
+  transform: translateY(-40px) translateX(-26px);
+  color: #2196f3;
 }
 
-.modal-form-input-wrapper {
-  position: relative;
-  margin-bottom: 28px;
+.modal-form-input-wrapper:hover .modal-form-input,
+.modal-form-input-wrapper:hover .modal-form-input {
+  border: 1px solid #2196f3;
 }
 
-.modal-form-label {
-  position: absolute;
-
-  top: 50%;
-  left: 42px;
-  transform: translateY(-50%);
-
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.01em;
-  color: #757575;
+.modal-form-input-wrapper:hover .icon-form,
+.modal-form-input-wrapper:focus-within .icon-form {
+  fill: #2196f3;
 }
 
 .modal-form-texterea {
   position: relative;
+  margin-bottom: 20px;
 }
 
 .modal-form-label-textarea {
@@ -936,10 +965,18 @@ header a {
   top: 12px;
   left: 16px;
 
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.01em;
   color: #757575;
+}
+
+.comment-modal-form:focus + .modal-form-label-textarea,
+.comment-modal-form:hover + .modal-form-label-textarea,
+.comment-modal-form:not(:placeholder-shown) + .modal-form-label-textarea {
+  transform: translateY(-32px);
+  color: #2196f3;
 }
 
 .comment-modal-form {
@@ -951,15 +988,24 @@ header a {
   padding-bottom: 12px;
   padding-left: 16px;
 
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   resize: none;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
 }
 
-.icon-form-user,
-.icon-form-letter,
-.icon-form-phone {
-  position: absolute;
+.comment-modal-form:focus,
+.comment-modal-form:hover {
+  border: 1px solid #2196f3;
+}
 
+.icon-form {
+  position: absolute;
   fill: #212121;
+  cursor: pointer;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-form-user {
@@ -980,11 +1026,17 @@ header a {
   transform: translateY(-50%);
 }
 
-.agreement-label {
-  display: inline-block;
+.modal-form-option {
+  margin-bottom: 30px;
 }
 
-.agreement {
+.agreement-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form-checkbox {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -995,11 +1047,30 @@ header a {
   overflow: hidden;
 }
 
-.agreement-policy-form {
+.modal-form-checkbox:checked + .modal-form-agreement {
+  border: none;
+  background-color: #2196f3;
+}
+
+.modal-form-agreement {
   display: flex;
   justify-content: center;
   align-items: center;
 
+  margin-right: 8.38px;
+
+  width: 16px;
+  height: 15px;
+  border: 1.7px solid #212121;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.icon-check-mark {
+  fill: #ffffff;
+}
+
+.agreement-policy-form {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;

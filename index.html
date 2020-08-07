@@ -64,7 +64,9 @@
             Эффективные решения <br />
             для вашего бизнеса
           </h1>
-          <button class="hero-button">Заказать услугу</button>
+          <button data-modal-open type="button" class="hero-button">
+            Заказать услугу
+          </button>
         </div>
       </section>
       <!-- О нас -->
@@ -496,9 +498,9 @@
         </div>
       </div>
     </footer>
-    <div class="backdrop">
+    <div data-modal class="backdrop is-hidden">
       <form class="modal-form">
-        <button type="button" class="button-close">
+        <button data-modal-close type="button" class="button-close">
           <svg width="12" height="10.97" class="icon-form-button-close">
             <use href="./images/svg/sprite.svg#icon-close-form"></use>
           </svg>
@@ -507,61 +509,73 @@
           Оставьте свои данные, мы вам перезвоним
         </h2>
         <div class="modal-form-input-wrapper">
-          <label for="user-name-form" class="modal-form-label">Имя</label>
           <input
             type="text"
             name="user-name"
             id="user-name-form"
             class="modal-form-input"
+            placeholder=" "
+            required
           />
-          <svg width="12" height="10.97" class="icon-form-user">
+          <label for="user-name-form" class="modal-form-label">Имя</label>
+          <svg width="12" height="10.97" class="icon-form-user icon-form">
             <use href="./images/svg/sprite.svg#icon-user-form"></use>
           </svg>
         </div>
         <div class="modal-form-input-wrapper">
-          <label for="user-tel-form" class="modal-form-label">Телефон</label>
           <input
             type="tel"
             name="user-tel"
             id="user-tel-form"
             class="modal-form-input"
+            placeholder=" "
+            required
           />
-          <svg width="13" height="13" class="icon-form-phone">
+          <label for="user-tel-form" class="modal-form-label">Телефон</label>
+          <svg width="13" height="13" class="icon-form-phone icon-form">
             <use href="./images/svg/sprite.svg#icon-phone-form"></use>
           </svg>
         </div>
         <div class="modal-form-input-wrapper">
-          <label for="user-email-form" class="modal-form-label">Почта</label>
           <input
             type="email"
             name="user-email"
             id="user-email-form"
             class="modal-form-input"
+            placeholder=" "
+            required
           />
-          <svg width="15" height="12" class="icon-form-letter">
+          <label for="user-email-form" class="modal-form-label">Почта</label>
+          <svg width="15" height="12" class="icon-form-letter icon-form">
             <use href="./images/svg/sprite.svg#icon-letter-form"></use>
           </svg>
         </div>
         <div class="modal-form-texterea">
-          <label for="textarea" class="modal-form-label-textarea"
-            >Комментарий</label
-          >
           <textarea
             name="modal-textarea"
             id="textarea"
             class="comment-modal-form"
+            placeholder=" "
           ></textarea>
+          <label for="textarea" class="modal-form-label-textarea"
+            >Комментарий</label
+          >
         </div>
         <div class="modal-form-option">
-          <label for="agreement-label">
+          <label class="agreement-label" for="agreement">
             <input
               type="checkbox"
               name="agreement"
               id="agreement"
               value="agreement"
-              class="agreement"
+              class="modal-form-checkbox"
+              placeholder=" "
             />
-            <span class="modal-form-checkbox-agreement"></span>
+            <span class="modal-form-agreement">
+              <svg width="12" height="9" class="icon-check-mark">
+                <use href="./images/svg/sprite.svg#icon-check-mark"></use>
+              </svg>
+            </span>
             <span class="agreement-policy-form"
               >Соглашаюсь с рассылкой и принимаю<a
                 href=""
