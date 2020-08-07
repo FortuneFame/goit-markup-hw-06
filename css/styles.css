@@ -939,13 +939,18 @@ header a {
 }
 
 .modal-form-input-wrapper:hover .modal-form-label,
-.modal-form-input-wrapper:hover .modal-form-label {
+.modal-form-input-wrapper:focus .modal-form-label,
+.modal-form-input:not(:placeholder-shown) + .modal-form-label {
   transform: translateY(-40px) translateX(-26px);
   color: #2196f3;
 }
 
+.modal-form-input:valid {
+  border: 1px solid #2196f3;
+}
+
 .modal-form-input-wrapper:hover .modal-form-input,
-.modal-form-input-wrapper:hover .modal-form-input {
+.modal-form-input-wrapper:focus-within .modal-form-input {
   border: 1px solid #2196f3;
 }
 
